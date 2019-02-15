@@ -14,7 +14,7 @@ abc 3
 '''
 from itertools import chain
 
-with open('dataset_3363_3-2.txt', 'r') as code:
+with open('stepik_3.4.3.txt', 'r') as code:
     code0 = code.read()
     code1 = code0.lower().split()
     code3 = set(code0.split())

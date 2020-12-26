@@ -20,12 +20,29 @@ Sample Input:
 Иванов;58;72;85
 '''
 file = './stepik_3.4.4.txt'
+
 def ReadJournal(Journal):
     with open(Journal, 'r') as journal:
         for string in journal:
             yield string.strip().split(';')
-    
+
+math = 0
+physics = 0
+rus = 0
+total = 0
+
 for i in ReadJournal(file):
-    print(i)
+    # print(i)
     A = (int(i[1]) + int(i[2]) + int(i[3]))/3
-    print(A)
+    # ocen = 
+    math += int(i[1])
+    physics += int(i[2])
+    rus += int(i[3])
+    total += 1
+    with open("./stepik_3.4.4.out", 'a') as out:
+        print(A, file=out)
+print("Средние оценки по Математике, Физике и Русскому:")
+with open("./stepik_3.4.4.out", 'a') as out:
+    print(math/total, physics/total, rus/total, sep=' ', file=out)
+
+# {math:[0, 0], physics: [0, 0], rus: [0, 0]}

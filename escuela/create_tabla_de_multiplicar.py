@@ -6,6 +6,12 @@ from pypdf import PdfWriter, PdfReader
 
 
 def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
+    '''
+    Create a table of Multiplication using a random function
+    dsc_pdf_name - name of output pdf file
+    multiplicand - number for what created a table, 
+    if the put value "random" create a random table of Multiplication from 0 to 10
+    '''
 
     packet = io.BytesIO()
     can = canvas.Canvas(packet)
@@ -14,7 +20,12 @@ def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
     axis_y = 800
     axis_x = 20
     while lines_count > 0:
-        for i in range(5):
+        for _column in range(5):
+            if multiplicand == 'random':
+                can.drawString(axis_x, axis_y, f'{random.randint(0, 10)} x {random.randint(0, 10)}=')
+                axis_x += 120
+                continue
+
             can.drawString(axis_x, axis_y, f'{random.randint(0, 10)} x {multiplicand} =')
             axis_x += 120
 
@@ -40,4 +51,5 @@ def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
 if __name__ == '__main__':
     tabla_de_multiplicar('tabla_de_multiplicar_2.pdf', 2)
     tabla_de_multiplicar('tabla_de_multiplicar_3.pdf', 3)
+    tabla_de_multiplicar('tabla_de_multiplicar_random.pdf', 'random')
 

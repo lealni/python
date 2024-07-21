@@ -5,19 +5,18 @@ from reportlab.pdfgen import canvas
 from pypdf import PdfWriter, PdfReader
 
 
-def tabla_de_multiplicar(dsc_pdf_name):
+def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
 
     packet = io.BytesIO()
     can = canvas.Canvas(packet)
 
-    lines_count = 15
+    lines_count = 16
     axis_y = 800
     axis_x = 20
     while lines_count > 0:
         for i in range(5):
-            can.drawString(axis_x, axis_y, f'{random.randint(0, 10)} x {random.randint(0, 10)}=')
+            can.drawString(axis_x, axis_y, f'{random.randint(0, 10)} x {multiplicand} =')
             axis_x += 120
-            print(f'{i}x{random.randint(0, 10)}')
 
         lines_count -= 1
         axis_y -= 50
@@ -39,4 +38,6 @@ def tabla_de_multiplicar(dsc_pdf_name):
 
 
 if __name__ == '__main__':
-    tabla_de_multiplicar('tabla_de_multiplicar.pdf')
+    tabla_de_multiplicar('tabla_de_multiplicar_2.pdf', 2)
+    tabla_de_multiplicar('tabla_de_multiplicar_3.pdf', 3)
+

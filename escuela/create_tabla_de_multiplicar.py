@@ -26,7 +26,7 @@ def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
                 axis_x += 120
                 continue
 
-            can.drawString(axis_x, axis_y, f'{random.randint(0, 10)} x {multiplicand} =')
+            can.drawString(axis_x, axis_y, f'{multiplicand} x {random.randint(0, 10)} =')
             axis_x += 120
 
         lines_count -= 1

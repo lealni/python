@@ -51,5 +51,12 @@ def tabla_de_multiplicar(dsc_pdf_name, multiplicand):
 if __name__ == '__main__':
     tabla_de_multiplicar('tabla_de_multiplicar_2.pdf', 2)
     tabla_de_multiplicar('tabla_de_multiplicar_3.pdf', 3)
-    tabla_de_multiplicar('tabla_de_multiplicar_random.pdf', 'random')
+    tabla_de_multiplicar('tabla_de_multiplicar_4.pdf', 4)
+    tabla_de_multiplicar('tabla_de_multiplicar_5.pdf', 5)
+    tabla_de_multiplicar('tabla_de_multiplicar_6.pdf', 6)
+    tabla_de_multiplicar('tabla_de_multiplicar_7.pdf', 7)
+    tabla_de_multiplicar('tabla_de_multiplicar_8.pdf', 8)
+    tabla_de_multiplicar('tabla_de_multiplicar_9.pdf', 9)
+    # tabla_de_multiplicar('tabla_de_multiplicar_10.pdf', 10)
+    # tabla_de_multiplicar('tabla_de_multiplicar_random.pdf', 'random')
 

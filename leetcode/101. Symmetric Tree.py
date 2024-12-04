@@ -9,9 +9,11 @@ class TreeNode:
         self.right = right
 
 
-def isSymmetric(root: Optional[TreeNode]) -> bool:
+def isSymmetric_g(root: Optional[TreeNode]) -> bool:
     """
     https://leetcode.com/problems/symmetric-tree/description/
+    My solution before ask chatgpt
+    no pass all test cases
     """
     res_left = []
     res_right = []
@@ -33,7 +35,21 @@ def isSymmetric(root: Optional[TreeNode]) -> bool:
     print(f"right {res_right}")
     return True if res_left == res_right[::-1] else False
     
-
+def isSymmetric(root: Optional[TreeNode]) -> bool:
+        """
+        solution after ask chatgpt
+        """
+        def node(tree_left, tree_right) -> bool:
+            if not tree_left and not tree_right:
+                return True
+            elif not tree_left or not tree_right:
+                return False
+            else:
+                return (node(tree_left.left, tree_right.right)
+                    and node(tree_left.right, tree_right.left)
+                    and tree_left.val == tree_right.val)
+            
+        return node(root.left, root.right)
 
 class TestDecrypt(unittest.TestCase):
     def test_tree01(self):
